@@ -1,0 +1,111 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %> </title>
+		<!-- links------------------------------ -->
+		<link rel="stylesheet" href="/public/styles.css" />
+		<script
+			src="https://kit.fontawesome.com/b7a2ac83f3.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="page_container">
+			<!-- Side panel-------------------------------------------- -->
+			<aside>
+				<!-- Logo-------------------------------------------- -->
+				<div class="aside_logo">
+					<img
+						src="https://cdn.discordapp.com/attachments/882362353507778613/991768839442411610/Untitled-1-01-removebg-preview_1.png"
+						alt="logo"
+					/>
+					<h1>SCC</h1>
+				</div>
+				<br /><br />
+
+				<!-- Search-------------------------------------------- -->
+				<div class="search">
+					<select name="search" id="search">
+						<option value="" hidden>Search by month</option>
+						<option value="january">January</option>
+						<option value="february">February</option>
+						<option value="march">March</option>
+						<option value="april">April</option>
+						<option value="may">May</option>
+						<option value="june">June</option>
+						<option value="july">July</option>
+						<option value="august">August</option>
+						<option value="september">September</option>
+						<option value="october">October</option>
+						<option value="november">November</option>
+						<option value="december">December</option>
+					</select>
+					<button type="submit">Search</button>
+				</div>
+				<br /><br />
+
+				<!-- Departments-------------------------------------------- -->
+				<div class="departments">
+					<h3>Departments &#9661;</h3><br />
+					<a href="accounts/operations/operations">Operations</a><br /><br />
+					<a href="accounts/sales/sales">Sales & Marketing</a><br /><br />
+					<a href="accounts/administration/administration">Administration</a
+					><br /><br />
+					<a href="accounts/accounts/accounts">Accounts</a>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br />
+
+				<!-- Logout-------------------------------------------- -->
+				<div class="logout">
+					<img src="<%= acc_session.employee_pic %>" alt="" />
+					<br />
+					<a href="#">logout</a>
+				</div>
+			</aside>
+
+			<!-- Accounts Content-------------------------------------------- -->
+			<div class="content">
+				<h2>Sales & Management Department</h2>
+				<br />
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Cycle Hours</th>
+							<th>Cycle Pay</th>
+							<th>Manage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% Object.values(sales).forEach((sales) =>{ %>
+						<tr>
+							<td>
+								<img src="<%= sales.employee_pic %>" alt="" />
+							</td>
+							<td><%= sales.frst_nm %></td>
+							<td><%= sales.last_nm %></td>
+							<td><%= sales.cycle_hrs %> hrs</td>
+							<td>US$ <%= sales.cycle_pay %></td>
+							<td>
+								<a href="/accounts/sales/sales/edit/<%= sales.employee_id %> ">
+									<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+								<a href="/accounts/sales/sales/pay/<%= sales.employee_id %>">
+									<i class="fa-solid fa-sack-dollar"></i>
+								</a>
+							</td>
+						</tr>
+						<% }); %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

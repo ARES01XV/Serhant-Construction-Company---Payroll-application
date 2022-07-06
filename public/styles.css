@@ -1,0 +1,275 @@
+/** @format */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==================== LANDING PAGE ==================== */
+.landing_container{
+	padding: 5%;
+}
+
+.landing_container h1{
+	text-align: center;
+	color: white;
+	line-height: 130%;
+}
+
+.btns{
+	/* border: 1px solid red; */
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+.btns a{
+	text-decoration: none;
+	background-color: white;
+	color: #4e4d6a;
+	font-weight: bold;
+	padding: 2%;
+	margin: 3%;
+}
+.btns a:hover{
+	background-color: #69f0ae;
+}
+
+
+/* ==================== LOGIN FORM ==================== */
+.login_form {
+	/* border: 1px solid red; */
+	width: 50%;
+	margin: 10% auto;
+	padding: 3%;
+	background-color: #53667b;
+	color: white;
+}
+
+.login_form_logo {
+	/* border: 1px solid red; */
+	border-bottom: 1px solid gray;
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.login_form_logo img {
+	width: 30%;
+}
+
+.login_form > form input {
+	width: 100%;
+	height: 30px;
+	outline: none;
+	padding: 1%;
+	color: black;
+	letter-spacing: 2px;
+	caret-color: red;
+}
+
+.login_form > form button {
+	border: 2px solid white;
+	background-color: white;
+	padding: 2% 4%;
+	color: #4e4d6a;
+	font-weight: bold;
+}
+.login_form > form button:hover {
+	border: 2px solid white;
+	background-color: transparent;
+	color: white;
+	cursor: pointer;
+}
+
+/* -------------------------------------------- */
+.page_container {
+	display: flex;
+}
+
+/* ==================== SIDE PANEL ==================== */
+.page_container > aside {
+	/* border: 1px solid red; */
+	background-color: #53667b;
+	/* width: 15%; */
+	width: 18%;
+	height: 100vh;
+	padding: 1%;
+	position: sticky;
+	top: 0;
+}
+
+.aside_logo {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+}
+.aside_logo > img {
+	width: 30%;
+}
+
+/* Search-------------------------------------------- */
+.search {
+	/* border: 1px solid red; */
+	/* border: 1px solid #53667b; */
+	background: white;
+	height: 40px;
+	position: relative;
+	overflow: hidden;
+}
+.search select {
+	border: none;
+	outline: none;
+	height: 100%;
+	width: 70.9%;
+}
+.search button {
+	background-color: #69f0ae;
+	border: none;
+	height: 100%;
+	padding: 1% 4%;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+}
+.search button:hover {
+	background-color: #20e486;
+}
+
+/* Departments---------------------------------------- */
+.departments h3 {
+	color: white;
+	border-bottom: 1px solid white;
+}
+.departments a {
+	text-decoration: none;
+	color: #9facba;
+}
+.departments a:hover {
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+/* Logout---------------------------------------- */
+.logout {
+	/* border: 1px solid red; */
+	border-radius: 80px;
+	background-color: #69f0ae;
+	/* width: 100%; */
+	height: 62px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+.logout:hover {
+	background-color: #20e486;
+}
+.logout > img {
+	width: 30%;
+	border-radius: 50%;
+}
+.logout > a {
+	text-decoration: none;
+	color: black;
+	padding: 10%;
+	font-size: 20px;
+}
+/* .logout > a:hover {
+	background-color: #20e486;
+} */
+
+/* ==================== ACCOUNTS CONTENT ==================== */
+/* Index---------------------------------------- */
+.content {
+	/* border: 1px solid red; */
+	width: 82%;
+	padding: 2%;
+}
+.content > img {
+	margin-left: 25%;
+}
+
+/* Operations---------------------------------------- */
+.content > h2 {
+	text-align: center;
+	text-decoration: underline #53667b;
+	/* border-bottom: 1px solid #53667b; */
+}
+.content > table,
+th,
+td {
+	border-collapse: collapse;
+	border-bottom: 1px solid #53667b;
+	padding: 1%;
+	text-align: center;
+}
+.content > table {
+	width: 100%;
+}
+.content > table th {
+	background-color: #f7f6f9;
+}
+.content > table img {
+	/* border: 1px solid red; */
+	border-radius: 50%;
+	width: 90px;
+	height: 90px;
+}
+
+/* Manage Icons---------------------------------------- */
+.fa-pen-to-square,
+.fa-sack-dollar {
+	text-decoration: none;
+	font-size: 30px;
+	padding: 1%;
+	color: #53667b;
+}
+.fa-pen-to-square:hover {
+	color: #007bff;
+}
+.fa-sack-dollar:hover {
+	color: #28a745;
+}
+
+/* Edit Employee Form---------------------------------------- */
+.content > form {
+	/* border: 1px solid red; */
+	width: 50%;
+	margin: auto;
+	padding: 4%;
+	background-color: #53667b;
+	color: white;
+}
+
+.content > form h2{
+	border-bottom: 1px solid grey;
+}
+
+.content > form input {
+	width: 100%;
+	height: 30px;
+	outline: none;
+	padding: 1% 2%;
+	color: black;
+	letter-spacing: 2px;
+	caret-color: red;
+}
+
+.content > form button {
+	border: 2px solid #69f0ae;
+	background-color: #69f0ae;
+	padding: 3% 5%;
+	color: #4e4d6a;
+	font-weight: bold;
+}
+.content > form button:hover {
+	border: 2px solid #20e486;
+	background-color: #20e486;
+	cursor: pointer;
+}

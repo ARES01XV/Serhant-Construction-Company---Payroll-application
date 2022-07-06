@@ -1,0 +1,116 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %> </title>
+		<!-- links------------------------------ -->
+		<link rel="stylesheet" href="/public/styles.css" />
+		<script
+			src="https://kit.fontawesome.com/b7a2ac83f3.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="page_container">
+			<!-- Side panel-------------------------------------------- -->
+			<aside>
+				<!-- Logo-------------------------------------------- -->
+				<div class="aside_logo">
+					<img
+						src="https://cdn.discordapp.com/attachments/882362353507778613/991768839442411610/Untitled-1-01-removebg-preview_1.png"
+						alt="logo"
+					/>
+					<h1>SCC</h1>
+				</div>
+				<br /><br />
+
+				<!-- Search-------------------------------------------- -->
+				<div class="search">
+					<select name="search" id="search">
+						<option value="" hidden>Search by month</option>
+						<option value="january">January</option>
+						<option value="february">February</option>
+						<option value="march">March</option>
+						<option value="april">April</option>
+						<option value="may">May</option>
+						<option value="june">June</option>
+						<option value="july">July</option>
+						<option value="august">August</option>
+						<option value="september">September</option>
+						<option value="october">October</option>
+						<option value="november">November</option>
+						<option value="december">December</option>
+					</select>
+					<button type="submit">Search</button>
+				</div>
+				<br /><br />
+
+				<!-- Departments-------------------------------------------- -->
+				<div class="departments">
+					<h3>Departments &#9661;</h3><br />
+					<a href="supervisors/operations/operations">Operations</a>
+					<br /><br />
+					<a href="supervisors/sales/sales">Sales & Marketing</a>
+					<br /><br />
+					<a href="supervisors/administration/administration">Administration</a>
+					<br /><br />
+					<a href="supervisors/accounts/accounts">Accounts</a>
+					<br /><br />
+					<a href="supervisors/depts_tbl/depts_tbl">Departments</a>
+				</div>
+				<br /><br /><br /><br /><br />
+
+				<!-- Logout-------------------------------------------- -->
+				<div class="logout">
+					<img src="<%= sup_session.admin_pic %>" alt="" />
+					<br />
+					<a href="supervisors/operations/operations/supervisors_logout"
+						>logout</a
+					>
+				</div>
+			</aside>
+
+			<!-- Supervisors Content-------------------------------------------- -->
+			<div class="content">
+				<h2>Operations Department</h2>
+				<br />
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Total Regular Hrs</th>
+							<th>Total Overtime Hrs</th>
+							<th>Manage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% Object.values(operations).forEach((operations) =>{ %>
+						<tr>
+							<td>
+								<img src="<%= operations.employee_pic %>" alt="" />
+							</td>
+							<td><%= operations.frst_nm %></td>
+							<td><%= operations.last_nm %></td>
+							<td><%= operations.regular_hrs %> hrs</td>
+							<td><%= operations.overtime_hrs %> hrs</td>
+							<td>
+								<a
+									href="/supervisors/operations/operations/edit/<%= operations.employee_id %>"
+								>
+									<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+							</td>
+						</tr>
+						<% }); %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

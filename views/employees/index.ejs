@@ -1,0 +1,89 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %> </title>
+		<!-- links------------------------------ -->
+		<link rel="stylesheet" href="/public/employees_style.css" />
+        <script
+			src="https://kit.fontawesome.com/b7a2ac83f3.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<!-- Logo-------------------------------------------- -->
+				<div class="logo">
+					<img
+						src="https://cdn.discordapp.com/attachments/882362353507778613/991768839442411610/Untitled-1-01-removebg-preview_1.png"
+						alt="logo"
+					/>
+					<h1>SCC</h1>
+				</div>
+
+				<!-- Search-------------------------------------------- -->
+				<div class="search">
+					<select name="search" id="search">
+						<option value="" hidden>Search by month</option>
+						<option value="january">January</option>
+						<option value="february">February</option>
+						<option value="march">March</option>
+						<option value="april">April</option>
+						<option value="may">May</option>
+						<option value="june">June</option>
+						<option value="july">July</option>
+						<option value="august">August</option>
+						<option value="september">September</option>
+						<option value="october">October</option>
+						<option value="november">November</option>
+						<option value="december">December</option>
+					</select>
+					<button type="submit">Search</button>
+				</div>
+                
+                <!-- Logout-------------------------------------------- -->
+				<div class="logout">
+					<img
+						src="<%= emp_session.employee_pic %>"
+						alt="employee_photo"
+					/>
+					<br />
+					<a href="/employees/employees_logout">logout</a>
+				</div>
+			</header>
+
+			<main>
+                                                
+                <!-- Table-------------------------------------------- -->
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Time In</th>
+                            <th>Time Out</th>
+                            <th>Regular Hours</th>
+                            <th>Overtime Hours</th>
+						</tr>
+					</thead>
+					<tbody>
+                        <% Object.values(emp_info).forEach((emp_info) => { %>
+						<tr>
+							
+							<td><%=emp_info.date %></td>
+							<td><%=emp_info.time_in %></td>
+							<td><%=emp_info.time_out %></td>
+							<td><%=emp_info.regular_hrs %></td>
+							<td><%=emp_info.overtime_hrs %></td>
+						</tr>
+                        <% }); %>
+					</tbody>
+				</table>
+			</main>
+		</div>
+	</body>
+</html>
